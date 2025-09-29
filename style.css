@@ -1,0 +1,92 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;800&family=Work+Sans:wght@100;300;500;700;900&display=swap');
+
+* {
+    box-sizing: border-box;
+    font-family: "Work Sans", sans-serif;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    background-color: #dbdbdb;
+    height: 100vh;
+}
+
+.container h2 {
+    text-align: center;
+    margin-top: 55px;
+}
+
+/* Desktop layout */
+.container .content {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(300px, 1fr)); /* Reduced min-width for smaller screens */
+    gap: 20px;
+    justify-content: center;
+    padding: 20px;
+}
+
+.content div {
+    height: 300px; /* Fixed height */
+    width: 100%;
+    max-width: 550px;
+    background-color: aqua;
+    border-radius: 10px;
+    transition: transform 0.3s ease-in-out; /* Smooth hover effect */
+}
+
+.content div:hover {
+    transform: scale(1.05); /* Slight zoom effect on hover */
+}
+
+/* Background images */
+.solo {
+    background-image: url('images/solo.png');
+}
+.shadow {
+    background-image: url('images/shadow.jpg');
+}
+.tbate {
+    background-image: url('images/tbate.jpg');
+}
+.note {
+    background-image: url('images/inf.jpg');
+    background-position: top;
+}
+.rudi {
+    background-image: url('images/rudii.jpg');
+}
+.eighty {
+    background-image: url('images/86.jpg');
+}
+
+/* Common styles for images */
+.content div {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.note {
+    background-image: url('images/inf.jpg');
+    background-position:  10% center;
+}
+
+/* RESPONSIVE DESIGN */
+@media (max-width: 1024px) {
+    .container .content {
+        grid-template-columns: repeat(2, 1fr); /* 2 columns for tablets */
+        gap: 25px;
+    }
+}
+
+@media (max-width: 767px) {
+    .container .content {
+        grid-template-columns: 1fr; /* Stack items in one column for mobile */
+        gap: 20px;
+    }
+
+    .content div {
+        max-width: 90%; /* Prevents full-width stretching */
+        margin: 0 auto; /* Centers divs */
+    }
+}
